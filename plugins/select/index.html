@@ -1,0 +1,128 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="CSS/jquery.select.css" rel="stylesheet" />
+    <link href="CSS/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+    <link href="SelectIcon/iconfont.css" rel="stylesheet" />
+    <title>SelectTest</title>
+</head>
+<body style="background-color: #fff; transition:all 1s;">
+    <div style="width:725px;margin:30px auto;">
+        <h2 style="text-align:center;">最新版自制小清新Select插件</h2><br />
+        <div>
+            <b>例1：固定宽度,无搜索框,有默认选择项,有回调函数</b><br /><br />
+            <select id="mySelect">
+                <option value="1">地球之巅</option>
+                <option value="2">宇宙之尽</option>
+                <option value="3" selected="selected">时光之末</option>
+                <option value="4">生命之终</option>
+                <option value="5">灵魂之绝</option>
+                <option value="6">地球之底</option>
+                <option value="7">宇宙之起</option>
+                <option value="8">时光之初</option>
+                <option value="9">生命之诞</option>
+                <option value="10">灵魂之始</option>
+                <option value="11">别问我为啥</option>
+                <option value="12">这是测试超长宽度的兼容性</option>
+            </select>
+        </div>
+        <div style="margin-top:220px;">
+            <b>例2：自适应内容宽度,有搜索框,自定义字体,自定义下拉列表最大高度,无默认选择项</b><br /><br />
+            <select id="mySelect1">
+                <option value="1">地球之巅</option>
+                <option value="2">宇宙之尽</option>
+                <option value="3">时光之末</option>
+                <option value="4">生命之终</option>
+                <option value="5">灵魂之绝</option>
+                <option value="6">宇宙之起</option>
+                <option value="7">时光之初</option>
+                <option value="8">生命之诞</option>
+                <option value="9">灵魂之始</option>
+                <option value="10">别问我为啥</option>
+                <option value="11">这是测试超长宽度的兼容性</option>
+            </select>
+        </div>
+
+        <div style="margin-top:200px;margin-bottom:230px;">
+            <b>例3：自适应内容宽度,无搜索框,有默认选择项,下拉列表高度小于默认设置或自定义的最大高度</b><br /><br />
+            <select id="mySelect2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6" selected="selected">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+        </div>
+        <p style="color:red;">该插件下原生标签的change事件不会被触发,请直接通过原生select获取选择值,参考例1的回调实现</p>
+        <p style="color:red;">兼容IE8及以上,给需要学习或者使用的人,更多定制请参看全部参数,如遇到什么麻烦可以留言联系我</p>
+    </div>
+
+    <script src="JS/jquery-1.12.4.min.js"></script>
+    <script src="JS/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="JS/jquery.select.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //全部使用默认参数可以直接这样使用
+            //$("#mySelect").select();
+
+            //例1
+            $("#mySelect").select({
+                width: "150px",
+                showSearch: false,
+                callBack: function () {
+                    alert("Value值是：" + $("#mySelect").val() + " Text值是：" + $("#mySelect").next().attr("text"));
+                }
+            });
+
+            //例2
+            $("#mySelect1").select({
+                listMaxHeight: "100px",
+                themeColor: "orange",
+                showSearch: true,
+                fontColor: "coral",
+                fontHoverColor: "#000",
+                rowColor: "#fff",
+                rowHoverColor: "orange",
+                fontFamily: "黑体"
+            });
+
+            //例3
+            $("#mySelect2").select({
+                themeColor: "cyan",
+                rowHoverColor: "cyan"
+            });
+
+            //可选参数,不选将使用默认值（颜色可为支持的英文颜色，如red、cyan和16进制、RGB等，大小单位可为px、百分比等,特殊注明的除外）
+            //width: "auto",            //生成的select框宽度
+            //minWidth: "none",         //最小宽度值,默认不设置（特殊注明：单位只能是px）
+            //opacity: true,            //是否设置背景透明,默认透明
+            //listMaxHeight: "200px",     //生成的下拉列表最大高度
+            //themeColor: "#00bb9c",    //主题颜色
+            //fontColor: "#000",        //字体颜色
+            //fontFamily: "'Helvetica Neue', arial, sans-serif",    //字体种类
+            //fontSize: "15px",           //字体大小
+            //showSearch: false,        //是否启用搜索框
+            //rowColor: "#fff",          //行原本的颜色,此处根据页面背景颜色设置,不设置会默认白色
+            //rowHoverColor: "#00bb9c", //移动选择时，每一行的hover底色
+            //fontHoverColor: "#fff",   //移动选择时，每一行的字体hover颜色
+            //mainContent: "请选择",    //选择显示框的默认文字
+            //searchContent: "关键词搜索",   //搜索框的默认提示文字
+            //callBack: function () { }   //选择事件的回调函数
+
+            //自动变化网站背景
+            setInterval(function () {
+                var colors = ["#fff", "#b200ff", "#87cafa", "#b6ff00", "#4b64f6"];
+                var color = colors[parseInt(Math.random() * 4)];
+                $("body").css("background-color", color);
+            }, 5000);
+
+        });
+    </script>
+</body>
+</html>

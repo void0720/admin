@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./pages/steps/step.css">
+    <script src="./pages/steps/step.js"></script>
+</head>
+<body>
+    <div class="step1"></div><br><br><br><br><br><br>
+    <div class="step2"></div>
+
+    <script>
+        $(".step1").loadStep({
+            size: "small",//可选值：small,large
+            color: "green",//可选值：green,blue
+            steps: [{//所有步骤
+                title: "1",//名称
+                content: "填写账户名"//步骤内容(鼠标移动到本步骤节点时，会提示该内容)
+            },{
+                title: "2",
+                content: "验证身份"
+            },{
+                title: "3",
+                content: "设置新密码"
+            },{
+                title: "4",
+                content: "完成"
+            }]
+        }).setStep(2);
+
+        $(".step2").loadStep({
+            size: "large",//可选值：small,large
+            color: "blue",//可选值：green,blue
+            steps: [{//所有步骤
+                title: "1",//名称
+                content: "填写账户名"//步骤内容(鼠标移动到本步骤节点时，会提示该内容)
+            },{
+                title: "2",
+                content: "验证身份"
+            },{
+                title: "3",
+                content: "设置新密码"
+            },{
+                title: "4",
+                content: "完成"
+            }]
+        }).setStep(3);
+    </script>
+</body>
+</html>

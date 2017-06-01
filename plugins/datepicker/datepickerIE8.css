@@ -1,0 +1,9 @@
+.dropdown-menu.daterangepicker{
+    width: 680px;
+}
+.show-calendar.daterangepicker .calendar{
+    float: left;
+}
+.daterangepicker .calendar{
+    max-width: 290px;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./pages/step/step.css">
+    <script src="./pages/step/step.js"></script>
+    <!-- <link rel="stylesheet" href="./step.css">
+    <script src="./jquery-1.9.1.min.js"></script>
+    <script src="./step.js"></script> -->
+</head>
+<body>
+
+    <div class="ad-steps1"></div>
+    <button class="nextStep1 btn btn-primary">下一步</button>
+    <button class="prevStep1 btn btn-primary">上一步</button>
+    <hr>
+
+    <div class="ad-steps2 ad-steps-vertical"></div>
+    <button class="nextStep2 btn btn-primary">下一步</button>
+    <button class="prevStep2 btn btn-primary">上一步</button>
+    <hr>
+
+    <div class="ad-steps3"></div>
+    <hr>
+    <div class="ad-steps4 ad-steps-vertical"></div>
+
+    <script>
+        $('.ad-steps1').loadSteps({
+            steps:[{
+                title:'填写账户名',
+                description:'测试测试测试测试测试测试测试11'
+            },{
+                title:'验证身份',
+                description:'测试测试测试测试测试测试测试22'
+            },{
+                title:'校验',
+                description:'测试测试测试测试测试测试测试33'
+            },{
+                title:'设置新密码',
+                description:'测试测试测试测试测试测试测试44'
+            },{
+                title:'完成',
+                description:'测试测试测试测试测试测试测试55'
+            }]
+        }).setStep(2);
+
+        $('.ad-steps2').loadSteps({
+            steps:[{
+                title:'填写账户名',
+                description:'测试测试测试测试测试测试测试11'
+            },{
+                title:'验证身份',
+                description:'测试测试测试测试测试测试测试22'
+            },{
+                title:'设置新密码',
+                state:'2017-05-13 16:24',
+                description:'测试测试测试测试测试测试测试55'
+            },{
+                title:'完成',
+                state:'2017-05-13 16:24',
+                description:'测试测试测试测试测试测试测试55'
+            }]
+        }).setStep(3);
+        $('.ad-steps3').loadSteps({
+            state:true,
+            steps:[{
+                title:'填写账户名',
+                state:'2017-05-12 09:57',
+                description:'测试测试测试测试测试测试测试11'
+            },{
+                title:'验证身份',
+                state:'2017-05-12 09:58',
+                description:'测试测试测试测试测试测试测试22'
+            },{
+                title:'校验',
+                state:'2017-05-13 14:45',
+                description:'测试测试测试测试测试测试测试33'
+            },{
+                title:'设置新密码',
+                state:'2017-05-13',
+                description:'测试测试测试测试测试测试测试44'
+            },{
+                title:'完成',
+                state:'2017-05-13 16:24',
+                description:'测试测试测试测试测试测试测试55'
+            }]
+        }).setStep(2);
+
+        $('.ad-steps4').loadSteps({
+            state:true,
+            steps:[{
+                title:'填写账户名',
+                state:'2017-05-13 16:24',
+                description:'测试测试测试测试测试测试测试11'
+            },{
+                title:'验证身份',
+                state:'2017-05-13 16:24',
+                description:'测试测试测试测试测试测试测试22'
+            },{
+                title:'设置新密码',
+                state:'2017-05-13 16:24',
+                description:'测试测试测试测试测试测试测试55'
+            },{
+                title:'完成',
+                state:'2017-05-13 16:24',
+                description:'测试测试测试测试测试测试测试55'
+            }]
+        }).setStep(3);
+
+        $('.nextStep1').click(function(event) {
+            $('.ad-steps1').nextStep();
+        });
+        $('.prevStep1').click(function(event) {
+            $('.ad-steps1').prevStep();
+        });
+
+        $('.nextStep2').click(function(event) {
+            $('.ad-steps2').nextStep();
+        });
+        $('.prevStep2').click(function(event) {
+            $('.ad-steps2').prevStep();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+{
+    "total": 6,
+    "rows": [{
+        "class": "TbRole",
+        "id": 1,
+        "remark": "BOSS",
+        "roleCode": null,
+        "roleName": "管理员"
+    },{
+        "class": "TbRole",
+        "id": 2,
+        "remark": "BOSS",
+        "roleCode": null,
+        "roleName": "管理员"
+    },{
+        "class": "TbRole",
+        "id": 2,
+        "remark": "BOSS",
+        "roleCode": null,
+        "roleName": "管理员"
+    },{
+        "class": "TbRole",
+        "id": 2,
+        "remark": "BOSS",
+        "roleCode": null,
+        "roleName": "管理员"
+    },{
+        "class": "TbRole",
+        "id": 2,
+        "remark": "BOSS",
+        "roleCode": null,
+        "roleName": "管理员"
+    },{
+        "class": "TbRole",
+        "id": 2,
+        "remark": "BOSS",
+        "roleCode": null,
+        "roleName": "管理员"
+    },{
+        "class": "TbRole",
+        "id": 2,
+        "remark": "BOSS",
+        "roleCode": null,
+        "roleName": "管理员"
+    },{
+        "class": "TbRole",
+        "id": 2,
+        "remark": "BOSS",
+        "roleCode": null,
+        "roleName": "管理员"
+    }, {
+        "class": "TbRole",
+        "id": 3,
+        "remark": "操作员",
+        "roleCode": null,
+        "roleName": "操作员"
+    }, {
+        "class": "TbRole",
+        "id": 4,
+        "remark": "监控平台",
+        "roleCode": null,
+        "roleName": "监控平台"
+    }, {
+        "class": "TbRole",
+        "id": 5,
+        "remark": "企业",
+        "roleCode": null,
+        "roleName": "企业"
+    }, {
+        "class": "TbRole",
+        "id": 6,
+        "remark": "企业",
+        "roleCode": null,
+        "roleName": "企业"
+    }]
+}

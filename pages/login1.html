@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>登录</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+  <script src="../plugins/jquery/jquery-1.9.1.min.js"></script>
+  <script src="../plugins/bootstrap/bootstrap.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../plugins/ionicons/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../plugins/ionicons/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../plugins/iCheck/admin.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="../plugins/iCheck/square/blue.css">
+  <script src="../js/jquery.placeholder-2.3.1.js"></script>
+  <!--[if lt IE 9]>
+  <script src="./plugins/bootstrap/html5shiv.min.js"></script>
+  <script src="./plugins/bootstrap/respond.min.1.4.2.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition login-page">
+<div class="login-box" style="font-size:16px;">
+  <div class="login-logo">
+    <a href="../index.html"><b>Admin</b>UI</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg"><b>欢迎登录</b></p>
+
+    <form action="../index.html" method="post">
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="用户名">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="密码">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> 记住密码
+            </label>
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+    <div class="social-auth-links text-center">
+      <a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
+        忘记密码？</a>
+      <a href="./register.html" class="btn btn-block btn-social btn-google btn-flat">
+        没账号？去注册</a>
+    </div>
+
+  </div>
+</div>
+
+<script src="../plugins/iCheck/icheck.min.js"></script>
+<script>
+  $(function () {
+    $('input').placeholder();
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+    });
+  });
+</script>
+</body>
+</html>

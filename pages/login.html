@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户登录</title>
+    <script src="../plugins/jquery/jquery-1.9.1.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="../plugins/bootstrap/respond.min.1.4.2.js"></script>
+        <script src="../plugins/bootstrap/html5shiv.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/validate.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="../js/login.js"></script>
+</head>
+<body>
+    <div class="loginBar">
+        <div class="row">
+            <!-- <div class="col-xs-6 text-right imgCont">
+                <div class="row line">
+                    <img src="../images/user1.jpg" height="65" width="245" alt="">
+                </div>
+            </div> -->
+            <div class="col-xs-12 text-center logoBar">
+                <h2>物流管理平台</h2>
+                <h4>Logistics management platform</h4>
+            </div>
+        </div>
+        <div class="row userBar">
+            <div class="col-xs-12">
+                <form class="form-inline valid-form" action="../index.html" method="post">
+                    <div class="user_bg">
+                        <img class="long_bg" src="../images/lob.png" alt="">
+                        <div class="form-group pull-left use">
+                            <div class="label">
+                                <img src="../images/user.png" alt="" class="img-name">
+                            </div>
+                            <div class="inputControl inline-block">
+                                <input type="text" class="required" name="user" data-tip="请输入您的用户名"
+                                data-valid="isNonEmpty||onlyEn||between:2-6" data-error="用户名不能为空||用户名只能为英文||用户名长度为2-6位"  placeholder="请输入用户名">
+                            </div>
+                        </div>
+                        <div class="form-group pull-left use">
+                            <div class="label">
+                                <img src="../images/clock.png" alt="" class="img-name">
+                            </div>
+                            <div class="inputControl">
+                                <input type="password" class="required" data-tip="请输入您的密码" data-error="密码不能为空||密码长度6-16位" data-valid="isNonEmpty||between:6-16" placeholder="请输入密码">
+                            </div>
+                        </div>
+                        <div class="form-group pull-left use code">
+                            <div class="inputControl">
+                                <div class="codebar">
+                                    <!-- <img src="../images/lob.png" width=100 height=45 alt=""> -->
+                                    <div style="background:#fff;width:100px;height:45px;border-radius: 4px;"></div>
+                                    <span class="glyphicon glyphicon-triangle-bottom tri"></span>
+                                </div>
+                                <input type="text" id="verificationCode" class="required" data-tip="验证码" data-error="请输入" data-valid="isNonEmpty"  placeholder="验证码">
+                            </div>
+                        </div>
+                        <div class="form-group pull-right">
+                            <div class="formBtn">
+                                <img src="../images/lat.png" width="80" height="52" alt="">
+                                <span>登录</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/Validate.js"></script>
+</html>

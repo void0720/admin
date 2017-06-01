@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./pages/modals/modal.css">
+    <!-- <script src="./jquery-1.9.1.min.js"></script> -->
+    <script src="./pages/modals/modal.js"></script>
+</head>
+<body style="background: #fff">
+    <div class="demo"></div>
+    <div class="de"></div>
+
+    <button class="btn btn-primary openView">openView</button>
+    <button class="btn btn-primary confirm">confirm</button>
+    <button class="btn btn-primary msgBtn">msg</button>
+    <button class="btn btn-primary noticeBtn">notice</button>
+
+    <script>
+        $(".openView").on('click',function(event) {
+           $(this).openView({
+                title:'读取demo1页面',
+                url:'./pages/modals/demo1.html',
+                type:'GET',
+                data:{a:1},
+                save:['保存','btn-info',function(){alert('保存');$('.boxWrap').close(true);}]
+           })
+        });
+        $(".confirm").on('click',function(event) {
+           $(this).confirm('删除提示','确定要删除吗？','删除','btn-danger',function(){
+                alert('删除');
+           });
+        });
+
+        $('.msgBtn').click(function(event) {
+            $('.msgBtn').msg("自动消失提示框！",3,'center','success');
+        });
+
+        $('.noticeBtn').click(function(event) {
+            $('.noticeBtn').notice("提示","不会自动关闭的消息"+new Date());
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="./pages/tabs/tab.css">
+	<!--
+	<script src="./jquery-1.9.1.min.js"></script>
+	-->
+</head>
+<body>
+
+	<div>
+		<button class="btn btn-primary add1">添加</button>
+	</div>
+	<div class="myTab1" style="background:#fff; padding: 10px;">
+		<ul class="tabs-tab-title">
+			<li class="tabs-this">菜单一</li>
+			<li>菜单二</li>
+			<li>菜单三</li>
+			<li>菜单四</li>
+			<li>菜单五</li>
+		</ul>
+		<div class="tabs-tab-content" style="min-height:100px;">
+			<div class="tabs-tab-item tabs-show">内容1</div>
+			<div class="tabs-tab-item">内容2</div>
+			<div class="tabs-tab-item">内容3</div>
+			<div class="tabs-tab-item">内容4</div>
+			<div class="tabs-tab-item">内容5</div>
+		</div>
+	</div>
+
+	<div>
+		<button class="btn btn-primary add2">添加</button>
+	</div>
+
+	<div class="myTab2 tabs-tab-card" data-close="true" style="background:#fff;">
+		<ul class="tabs-tab-title">
+			<li class="tabs-this">菜单一</li>
+			<li>菜单二</li>
+			<li>菜单三</li>
+			<li>菜单四</li>
+			<li>菜单五</li>
+		</ul>
+		<div class="tabs-tab-content" style="min-height:100px;">
+			<div class="tabs-tab-item tabs-show">内容1</div>
+			<div class="tabs-tab-item">内容2</div>
+			<div class="tabs-tab-item">内容3</div>
+			<div class="tabs-tab-item">内容4</div>
+			<div class="tabs-tab-item">内容5</div>
+		</div>
+	</div>
+	<script src="./pages/tabs/tab.js"></script>
+
+	<script>
+
+		$(function(){
+			$('.myTab1').initTabs();
+			$('.myTab2').initTabs();
+
+			//添加标签页
+			var titleText = '标题';
+			var contentText = '新的内容';
+			var num1 = 1,num2 = 1;num3 = 1,num4 = 1;
+
+			$('.add1').click(function(event) {
+				$('.myTab1').addTab(titleText+num1++,contentText+num2++);
+			});
+			$('.add2').click(function(event) {
+				$('.myTab2').addTab(titleText+num3++,contentText+num4++);
+			});
+
+		});
+
+	</script>
+</body>
+</html>

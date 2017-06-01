@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文件树</title>
+    <link rel="stylesheet" href="./css/trees.css">
+    <script src="./js/trees.js"></script>
+</head>
+
+<body>
+    <div class="well well-sm">
+        <h2>文件树</h2>
+    </div>
+    <div class="well well-sm">
+        <div class="row">
+            <div class="col-xs-3">
+                <ul id="fileTree">
+                    <li class="trees">
+                        <div class="treeMenu">
+                            <input type="checkbox" name="sup" value="1">
+                            <span>一级目录</span>
+                        </div>
+                        <ul>
+                            <li class="tree">
+                                <input type="checkbox" s="sub" value="12">
+                                <span>二级目录</span>
+                            </li>
+                            <li class="tree">
+                                <input type="checkbox" s="sub" value="13">
+                                <span>二级目录</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-6 inTreeVal">
+                <button class="btn btn-primary getVal">获取选中的</button>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

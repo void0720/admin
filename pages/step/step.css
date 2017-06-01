@@ -1,0 +1,94 @@
+.ad-step-head{
+    float: left;
+    color: #fff;
+}
+.ad-step-stateBar{
+    position: absolute;
+    top: -55px;
+    left: -25px;
+    width: 96px;
+    line-height: 16px;
+    color: #333;
+    margin-left: 2px;
+    border-radius: 4px;
+}
+.ad-step-log{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: 5px 0;
+    text-align: center;
+    background: #bfcbd9;
+    border-radius: 50%;
+    float: left;
+}
+.ad-step-line{
+    width: 50px;
+    height: 10px;
+    margin-top: 25px;
+    background: #bfcbd9;
+    float: left;
+}
+.ad-step-cont{
+    float: left;
+    margin-left: 25px;
+}
+.ad-step-item{
+    width: 100px;
+    float: left;
+}
+.ad-step-title{
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+.ad-step-description{
+    font-size: 12px;
+    padding: 4px;
+}
+.ad-step-finish{
+    background: #09c;
+}
+.ad-step-finish-item{
+    color: #09c;
+}
+.ad-step-complate{
+    background: #13ce66;
+}
+.ad-step-active{
+    color: #13ce66;
+}
+.ad-steps-horizontal.horizontal{
+    padding-top: 60px;
+}
+.ad-steps-vertical.vertical{
+    padding-left: 95px;
+}
+.ad-steps-vertical .ad-step-line{
+    width: 10px;
+    height: 50px;
+    margin-left: 25px;
+    margin-top: 50px;
+    float: none;
+}
+.ad-steps-vertical .ad-step-log{
+    margin: 0 5px;
+}
+.ad-steps-vertical .ad-step-item{
+    width: auto;
+    height: 100px;
+    float: none;
+}
+.ad-steps-vertical .ad-step-title{
+    text-align: left;
+    margin: 0;
+}
+.ad-steps-vertical .ad-step-cont{
+    margin-top: 50px;
+}
+.ad-steps-vertical .ad-step-stateBar{
+    top: 0px;
+    left: -95px;
+}

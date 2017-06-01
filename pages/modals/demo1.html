@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a href="">a链接</a>
+	<div style="height: 200px;">这里是demo1内容
+		<input class="iii" type="text">
+	</div>
+	<button class="btn btn-primary confirm">confirm</button>
+
+	<button class="btn btn-primary demoClick">继续弹框</button>
+	<script>
+		$('.demoClick').off('click').on('click',function(event) {
+			$(".demoClick").openView({
+				title:'读取页面demo2',
+                url:'./pages/modals/demo1.html',
+                size:[600,'max',true],
+                data:{a:22},
+                callback:function(){console.log(this.data)}
+			});
+		});
+		$(".confirm").off('click').on('click',function(event) {
+			$('.boxWrap').close();
+			$(this).confirm('删除提示','确定要删除吗？','删除','btn-danger',function(){
+				alert('删除');
+			});
+		});
+	</script>
+</body>
+</html>

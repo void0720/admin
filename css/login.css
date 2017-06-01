@@ -1,0 +1,127 @@
+body {
+    background: url('../images/login_big.jpg');
+}
+
+.loginBar {
+    width: 816px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -408px;
+    margin-top: -150px;
+}
+
+.logoBar {
+    color: #ccc;
+}
+
+.userBar{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.imgCont {
+    padding-top: 20px;
+}
+
+.line {
+    border-right: 1px solid #ccc;
+    padding: 0 40px;
+}
+
+.formBtn{
+    height: 52px;
+    line-height: 50px;
+    width: 80px;
+    font-size: 18px;
+    color: #ccc;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+}
+.formBtn span{
+    position: absolute;
+    left: 20px;
+    top: 0;
+}
+
+.user_bg{
+    position: relative;
+    height: 50px;
+}
+.long_bg{
+    width: 700px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    z-index: -1;
+}
+.use{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.use .label{
+    padding: 0;
+    position: relative;
+}
+.use .label img{
+    position: absolute;
+    top: -21px;
+    left: 6px;
+    z-index: 1;
+}
+.code,.code .inputControl{
+    width: 100px;
+    margin-left: 7px;
+}
+.inputControl,.inputControl input{
+    display: inline-block;
+    width: 280px;
+    margin: 0;
+    background: #fff;
+}
+.inputControl.error,.inputControl.error input[type="text"], .inputControl.error input[type="password"]{
+    background: #fff;
+}
+.inputControl .valid_message {
+    border-radius: 2px;
+    padding: 1px 2px;
+    font-size: 12px;
+    background: #fff;
+    left: 15px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+}
+.inputControl.active {
+    background-color: #fff;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255,0,0,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255,0,0,.6);
+}
+.inputControl input.required{
+    width: 240px;
+    margin-left: 20px;
+}
+.code input.required{
+    width: 78px;
+    margin-left: 0px;
+}
+.codebar{
+    display: none;
+    position: absolute;
+    top: -55px;
+    left: -5px;
+    width: 100px;
+    height: 65px;
+    border-radius: 4px;
+}
+.codebar img{
+    border-radius: 4px;
+}
+.tri{
+    top: -6px;
+    left: -40px;
+    color: #fff;
+}

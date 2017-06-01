@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="./js/popup.js"></script>
+</head>
+
+<body>
+	<div class="well">
+		<div class="row">
+			<div class="col-sm-12">
+				<button type="button" class="btnTip btn btn-primary">自动消失的提示框</button>
+				<button type="button" class="btnPop1 btn btn-primary">默认的模态框</button>
+				<button type="button" class="btnPop2 btn btn-primary">点击黑色遮罩不关闭</button>
+				<button type="button" class="btnPop3 btn btn-primary">可读取页面的模态框</button>
+				<button type="button" class="btnPop4 btn btn-primary">设置按钮的模态框</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+
+	//自动消失的提示框
+	$(".btnTip").click(function(event) {
+		$(".popBox").pop({
+			type: "tips",
+			tips: {                          //自动消失提示框，仅在type:"tips"下使用
+                tips: "请设置提示信息！",            //提示的内容
+                time: 2000                          //消失的时间：毫秒数
+            }
+		});
+	});
+
+	//默认的模态框
+	$(".btnPop1").click(function(event) {
+		$(".popBox").pop();
+	});
+	//点击黑色遮罩不关闭
+	$(".btnPop2").click(function(event) {
+		$(".popBox").pop({
+			trigger: false,	//是否点击黑色遮罩关闭
+		});
+	});
+
+	//可读取页面的模态框
+	$(".btnPop3").click(function(event) {
+		$(".popBox").pop({
+			trigger: true,                    //是否点击黑色遮罩关闭
+			loadHtml: {                       //加载页面、指定页面的div:("./pages/list.html #id")
+                read: true,                        //是否启动读取页面方法
+                path: "./pages/list.html",                           //页面路径
+                param: {},                          //参数;多个参数可以改本行为值{}，与loadHtml中load方法的参数对应
+                callback: function(v){return v;}    //页面读取成功后回调函数,参数"v"为读取的内容
+            }
+		});
+	});
+	//设置按钮的模态框
+	$(".btnPop4").click(function(event) {
+		$(".popBox").pop({
+			size: [600,300],
+			loadHtml: {                       //加载页面、指定页面的div:("./pages/list.html #id")
+                read: true,                        //是否启动读取页面方法
+                path: "./pages/list.html",                           //页面路径
+                param: {},                          //参数;多个参数可以改本行为值{}，与loadHtml中load方法的参数对应
+                callback: function(v){
+					// $("#opBox").pop("resetPop0");
+				}    //页面读取成功后回调函数,参数"v"为读取的内容
+            },
+			footer: {                       //模态框尾部，仅在type:"pop"下使用
+                btn: [],                            //按钮的文字 多个按钮：["按钮1","按钮2"]
+                callback: [],//按钮的触发函数 [fn,fn]
+                align: "right"                     //按钮位置 left center right
+            }
+		});
+
+	});
+</script>
+
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--[if lt IE 9]>
+    <script src="./plugins/placeholder/jquery.placeholder-2.3.1.js"></script>
+    <script src="./plugins/placeholder/init.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="./pages/bootstrap-table/css/bootstrap-table.css">
+    <script src="./pages/bootstrap-table/js/bootstrap-table.js"></script>
+    <script src="./pages/bootstrap-table/js/bootstrap-table-zh-CN.js"></script>
+</head>
+<body>
+    <div class="well well-sm">
+        <form id="" class="form-inline" role="form">
+          <div class="form-group">
+              <label class="sr-only" for="title-txt">name</label>
+              <input type="text" class="form-control" id="name-txt" placeholder="输入名称">
+              <button type="button" id="btn-search" class="btn btn-primary btn-sm">
+                  <i class="glyphicon glyphicon-search"></i>
+                  查询
+              </button>
+          </div>
+          <div class="form-group">
+              <label class="sr-only" for="title-txt">name</label>
+              <input type="text" class="form-control" id="name-txt" placeholder="输入编号">
+              <button type="button" id="btn-search" class="btn btn-primary btn-sm">
+                  <i class="glyphicon glyphicon-search"></i>
+                  查询
+              </button>
+          </div>
+          <div class="form-group">
+              <button type="button" id="btn-reset" class="btn btn-primary btn-sm">
+                  <i class="glyphicon glyphicon-refresh"></i>
+                  重置
+              </button>
+          </div>
+        </form>
+    </div>
+    <div class="well well-sm">
+        <div id="toolbar" class="btn-group">
+            <div class="well well-sm">
+                <button type="button" class="btn btn-primary">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    <span>添加</span>
+                </button>
+                <button type="button" class="btn btn-info">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                    <span>编辑</span>
+                </button>
+                <button type="button" class="btn btn-danger btn-delate">
+                    <i class="glyphicon glyphicon-trash"></i>
+                    <span>删除</span>
+                </button>
+
+            </div>
+        </div>
+        <table id="dataTable"></table>
+    </div>
+</body>
+<script>
+    $(function(){
+        $("#dataTable").bootstrapTable({
+            url : "./pages/bootstrap-table/data.json",
+            dataType : "json",	// 数据类型
+            striped : true, // 隔行变色
+            height: 200,
+            sidePagination: 'server',//设置为服务器端分页
+            pagination: true, //是否分页
+            pageNumber : 1,		// 首页页码
+            pageSize: 5,//页面数据条数
+            pageList: [5, 10, 15, 20],
+            silent : true, // 必须设置刷新事件
+            clickToSelect: true,//在点击行时，自动选择rediobox 和 checkbox
+            buttonsAlign: "left",//按钮 水平方向的位置
+            search: true, //显示搜索框
+            showColumns: true,//内容列下拉框
+            showPaginationSwitch: false,//切换显示分页
+            showRefresh: true,
+            showToggle: true,
+            showColumns: true,
+            showExport:true,
+            queryParams : queryParams,	// 请求参数，后续的异步刷新
+            // queryParamsType:'',
+            responseHandler: responseHandler,
+            columns : [
+                {
+        			radio :'true',
+                    valign:'middle',
+                    // order:'',
+        			align : 'center'
+                },{
+                    field : 'id',
+                    sortable:'true',
+                    order:'desc',
+        			title : 'ID',
+        			align : 'center'
+                },{
+                    field : 'roleName',
+        			title : '角色名称',
+        			align : 'center'
+                },{
+                    field : 'remark',
+        			title : '备注',
+        			align : 'center',
+                    formatter:function(value,row,index){
+                        return row.roleName;
+                    }
+                },{
+                    field : '操作',
+        			title : '操作',
+        			align : 'center',
+                    formatter:function(value,row,index){
+                        value = this.field;
+                        // console.log(value);//操作
+                        var view = '<a href="#view" data-toggle="modal" class="btn btn-info" onclick="view(\'' + row.id + '\')">查看</a> ';
+				        var update = '<a href="#update" data-toggle="modal" class="btn btn-primary update" onclick="update(\'' + row.id + '\')">修改</a> ';
+                        return view+' '+update;
+                    }
+                }
+            ]
+        });
+        //点击某一行 从row可拿到当前行的所有Key
+        $("#dataTable").on('click-row.bs.table',function(field, row, $element){
+            console.log(row);
+        });
+
+        //checked 选择删除某行
+        $(".btn-delate").on('click',function(){
+            var ids = getIdSelections();
+            $("#dataTable").bootstrapTable('remove', {field: 'id', values: ids});
+            function getIdSelections() {
+                return $.map($("#dataTable").bootstrapTable('getSelections'), function (row) {
+                    return row.id
+                });
+            }
+        });
+
+        function responseHandler(res){
+            console.log(res);
+            return res
+        }
+        // 分页查询参数，是以键值对的形式设置的
+        function queryParams(params) {
+            console.log(params);
+        	return {
+        		// eventName : $('input[name=\'eventName\']').val(),	//额外的参数
+        		limit : params.limit, // 每页显示数量
+        		offset : params.offset, // SQL语句偏移量
+        	}
+        }
+    });
+    function view(v){
+        console.log(v);
+    }
+    function update(v){
+        console.log('dd'+v);
+    }
+    //表格高度自适应
+        var tableHeight = parseInt($(window).height())-parseInt($(".fixed-table-body").offset().top)-10;
+        console.log(tableHeight);
+        tableHeight>=300?tableHeight=tableHeight:tableHeight=300;
+        console.log(tableHeight);
+
+    	$('#dataTable').bootstrapTable('resetView',{height:tableHeight});
+
+</script>
+</html>

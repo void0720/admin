@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!--[if lt IE 9]>
+    <script src="./plugins/bootstrap/html5shiv.min.js"></script>
+    <script src="./plugins/bootstrap/respond.min.1.4.2.js"></script>
+    <![endif]-->
+    <!-- <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../plugins/dataTables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="../plugins/dataTables/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="../plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="../plugins/dataTables/dataTables.bootstrap.js"></script> -->
+    <style>
+        /*.modal{position: absolute;}*/
+        .modal-backdrop{z-index: -1}
+        .modal-open .modal{background: rgba(0,0,0,.5);}
+        .panel-default {border:none;border-radius:0px;margin-bottom:0px;box-shadow:none;-webkit-box-shadow:none;}
+        .panel-default > .panel-heading {color:#777;background-color:#fff;border-color:#e6e6e6;padding:10px 10px;}
+        .panel-default > .panel-body {padding:10px;padding-bottom:0px;}
+        .panel-default > .panel-body ul {overflow:hidden;padding:0;margin:0px;margin-top:-5px;}
+        .panel-default > .panel-body ul li {line-height:27px;list-style-type:none;white-space:nowrap;text-overflow:ellipsis;}
+        .panel-default > .panel-body ul li .time {color:#a1a1a1;float:right;padding-right:5px;}
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover {background:none;border-color:transparent;}
+        .dataTables_wrapper .dataTables_paginate .paginate_button {padding:0;}
+    </style>
+  </head>
+
+  <body>
+    <div id="wrap">
+        <div class="well well-sm">
+          <h3>列表</h3>
+        </div>
+        <div class="well well-sm">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <i class="glyphicon glyphicon-volume-up" style="padding-right: 5px;"></i>消息列表</div>
+              <div class="panel-body" id="aaa">
+                <ul>
+                  <li>
+                    <a href="" target="_blank">【消息】清明节放假去哪浪？</a>
+                    <span class="time">2017-04-01</span></li>
+                  <li>
+                    <a href="" target="_blank">【消息】清明节放假去哪浪？</a>
+                    <span class="time">2017-04-01</span></li>
+                  <li>
+                    <a href="" target="_blank">【消息】清明节放假去哪浪？</a>
+                    <span class="time">2017-04-01</span></li>
+                  <li>
+                    <a href="" target="_blank">【消息】清明节放假去哪浪？</a>
+                    <span class="time">2017-04-01</span></li>
+                  <li>
+                    <a href="" target="_blank">【消息】清明节放假去哪浪？</a>
+                    <span class="time">2017-04-01</span></li>
+                  <li>
+                    <a href="" target="_blank">【消息】清明节放假去哪浪？</a>
+                    <span class="time">2017-04-01</span></li>
+                </ul>
+              </div>
+            </div>
+        </div>
+        <div class="well well-sm">
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#wDataModal" data-title="添加" data-body="<h1>body</h1>">添加</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#wDataModal" data-title="查询" data-body="bb">查询</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#wDataModal" data-title="删除" data-body="cc">删除</button>
+
+            <div class="modal fade" id="wDataModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h3>内容</h3>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">保存</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+            $('#wDataModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);//不可删除
+                var title = button.data('title');
+                var body = button.data('body');
+                // 可以在这里启动Ajax请求（然后在回调中做更新）
+                $(this).find('.modal-title').text(title);
+                $(this).find('.modal-body').html(body);
+            });
+            </script>
+
+
+        </div>
+    </div>
+  </body>
+
+</html>
